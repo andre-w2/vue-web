@@ -2,4 +2,4 @@
 ____
 ### yarn serve
 ____
-Данные хранятся в localStorage и в cookie , куки хранятся одинь день
+Данные хранятся в localStorage и в cookie , куки хранятся один день
