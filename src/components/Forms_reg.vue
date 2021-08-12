@@ -42,6 +42,8 @@
 
 <script>
 import Cookies from '../js.cookie.min.mjs';
+import md5 from 'js-md5';
+
 export default {
   data() {
     return {
@@ -52,10 +54,13 @@ export default {
   methods: {
     add() {
       if (this.email && this.password) {
-        localStorage.setItem('email',`${this.email}`);
-        localStorage.setItem('password',`${this.password}`);
-        Cookies.set('email', `${this.email}`, { expires: 1 })
-        Cookies.set('password', `${this.password}`, { expires: 1 })
+
+        localStorage.setItem('email', md5(`${this.email}`));
+        localStorage.setItem('password',md5(`${this.password}`));
+
+        Cookies.set('email', md5(`${this.emai}`), { expires: 1 })
+        Cookies.set('password', md5(`${this.password}`), { expires: 1 })
+        
         this.$router.push('/')
       }
     }

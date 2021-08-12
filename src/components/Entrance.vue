@@ -38,6 +38,7 @@
 
 <script>
 import Cookies from '../js.cookie.min.mjs';
+import md5 from 'js-md5';
 
 export default {
 	data() {
@@ -51,13 +52,17 @@ export default {
 	},
 	methods: {
 		entrance() {
+			this.error = ''
 			if (this.inputEmail && this.inputPas) {
-				this.error = ''
-				if (this.inputEmail === this.email && this.inputPas === this.pas) {
-					  localStorage.setItem('email',`${this.inputEmail}`);
-     				localStorage.setItem('password',`${this.inputPas}`);
-						this.$router.push('/')
-				}
+
+					let a = md5(this.inputEmail)
+					let b = md5(this.inputPas)
+					
+					if (a === this.email && b === this.pas) {
+						  localStorage.setItem('email', a);
+	     				localStorage.setItem('password',b);
+							this.$router.push('/')
+					}
 			} else {
 				this.error = 'Таких данных нет'
 			}
