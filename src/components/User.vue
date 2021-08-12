@@ -28,8 +28,11 @@
   </div>
   </template>
 </div>
+<div v-else-if="erros">
+	<h1>{{error}}</h1>
+</div>
 <div v-else>
-	<h1>LOADING...................................................</h1>
+	<h1>loading....</h1>
 </div>
 </template>
 
@@ -38,14 +41,24 @@ export default {
 	data() {
 		return {
 			users: null,
-			loading: false
+			loading: false,
+			error: '',
+			erros: false
 		}
 	},
 	async created() {
-		let f = await fetch('https://jsonplaceholder.typicode.com/users?_limit=3');
-		let d = await f.json();
-		this.users = await d;
-		this.loading = true
+		try {
+				let f = await fetch('https://jsonplaceholder.typicode.com/users?_limit=3');
+					if (!f.ok)
+						throw new Error(f.statusText)
+				let d = await f.json();
+				this.users = await d;
+				this.loading = true
+		} catch (err) {
+			console.log(err)
+			this.error = 'Ошибка загрузки'
+			this.erros = true
+		}
 	},
 	computed: {
 		ShowUserList() {
