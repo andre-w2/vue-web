@@ -55,8 +55,8 @@ export default {
 				this.error = ''
 				if (this.inputEmail === this.email && this.inputPas === this.pas) {
 					  localStorage.setItem('email',`${this.inputEmail}`);
-     				  localStorage.setItem('password',`${this.inputPas}`);
-					  location.href = 'http://localhost:8080'
+     				localStorage.setItem('password',`${this.inputPas}`);
+						this.$router.push('/')
 				}
 			} else {
 				this.error = 'Таких данных нет'

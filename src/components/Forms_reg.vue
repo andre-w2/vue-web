@@ -56,7 +56,7 @@ export default {
         localStorage.setItem('password',`${this.password}`);
         Cookies.set('email', `${this.email}`, { expires: 1 })
         Cookies.set('password', `${this.password}`, { expires: 1 })
-        location.href = 'http://localhost:8080';
+        this.$router.push('/')
       }
     }
   }

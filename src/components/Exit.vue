@@ -22,7 +22,7 @@ export default {
 		yes() {
 			localStorage.removeItem('email');
 			localStorage.removeItem('password');
-			location.href = 'http://localhost:8080/register'
+			this.$router.push('/register')
 		}
 	}
 }
