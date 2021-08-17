@@ -1,23 +1,23 @@
 <template>
-<div class="relative bg-white" v-if="localActiv">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-      <div class="flex justify-start lg:w-0 lg:flex-1">
-        <a href="#">
-          <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
-        </a>
-      </div>
-      <nav class="md:flex space-x-10">
+  <div class="relative bg-white" v-if="localActiv">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div class="flex justify-start lg:w-0 lg:flex-1">
+          <a href="#">
+            <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+          </a>
+        </div>
+        <nav class="md:flex space-x-10">
 
-        <router-link to="users" class="text-base font-medium text-gray-500 hover:text-gray-900">
-          Пользователи
-        </router-link>
-        <router-link to="/exit" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-          Выйти
-        </router-link>
-      </nav>
+          <router-link to="users" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            Пользователи
+          </router-link>
+          <router-link to="/exit" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            Выйти
+          </router-link>
+        </nav>
+      </div>
     </div>
-  </div>
     <header class="bg-white shadow">
       <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <h1 class="text-3xl font-bold text-gray-900">
@@ -47,34 +47,36 @@
         </dl>
       </div>
     </div>
-</div>
+  </div>
 
-<div v-else class="py-6 px-5 space-y-6">
-  <div>
-    <router-link to="/entrance" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+  <div v-else class="py-6 px-5 space-y-6">
+    <Button>
+     <router-link to="/entrance">
       Вход
     </router-link>
-    <p class="mt-6 text-center text-base font-medium text-gray-500">
-      <router-link to="/register" class="text-indigo-600 hover:text-indigo-500">
-          Регистрация
-      </router-link>
-    </p>
-  </div>
+  </Button>
+  <Button>
+    <router-link to="/register">
+      Регистрация
+    </router-link>
+  </Button>
 </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      email: localStorage.getItem('email'),
-      pas: localStorage.getItem('password')
-    }
-  },
-  computed: {
-    localActiv() {
-      return this.email ? true : false
+  import Button from './Button.vue';
+  export default {
+    components: {Button},
+    data() {
+      return {
+        email: localStorage.getItem('email'),
+        pas: localStorage.getItem('password')
+      }
+    },
+    computed: {
+      localActiv() {
+        return this.email ? true : false
+      }
     }
   }
-}
 </script>

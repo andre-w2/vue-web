@@ -4,14 +4,14 @@
 			<h3 class="text-lg leading-6 font-medium text-gray-900">
 				Вы точно хотите выйти?
 			</h3>
-			<p @click="yes" class="mt-1 max-w-2xl text-sm text-gray-500">
+			<button @click="yes" class="mt-1 max-w-2xl text-sm text-gray-500">
 				Да
-			</p>
-			<p class="mt-1 max-w-2xl text-sm text-gray-500">
+			</button>
+			<button class="mt-1 ml-5 max-w-2xl text-sm text-gray-500">
 				<router-link to='/'>
 					Нет
 				</router-link>
-			</p>
+			</button>
 		</div>
 	</div>
 </template>

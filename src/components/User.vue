@@ -1,9 +1,9 @@
 <template>
-<router-link to="/">
-	<button class="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+<Button class="bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+	<router-link to="/">
 		Назад
-	</button>
-</router-link>
+	</router-link>
+</Button>
 <div v-if="loading" class="bg-white shadow overflow-hidden sm:rounded-lg">
   <template v-for="user in ShowUserList" :key="user.id">
   <div  class="border-t border-gray-200">
@@ -37,7 +37,9 @@
 </template>
 
 <script>
+import Button from './Button.vue';
 export default {
+	components: {Button},
 	data() {
 		return {
 			users: null,
