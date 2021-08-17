@@ -50,12 +50,12 @@
   </div>
 
   <div v-else class="py-6 px-5 space-y-6">
-    <Button>
+    <Button class="bg-indigo-600 hover:bg-indigo-700">
      <router-link to="/entrance">
       Вход
     </router-link>
   </Button>
-  <Button>
+  <Button class="bg-indigo-600 hover:bg-indigo-700">
     <router-link to="/register">
       Регистрация
     </router-link>

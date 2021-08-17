@@ -8,7 +8,7 @@
         Создать аккаунт
       </h2>
     </div>
-    <div class="mt-8 space-y-6">
+    <form class="mt-8 space-y-6" action="" method="POST" @submit.prevent="add">
       <input type="hidden" name="remember" value="true">
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div>
-        <Button @click="add" class="bg-indigo-600 hover:bg-indigo-700">
+        <Button class="bg-indigo-600 hover:bg-indigo-700">
             Создать
         </Button>
         <Button class="bg-red-600 hover:bg-red-700 mt-3">
@@ -30,7 +30,7 @@
           </router-link>
         </Button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 </template>

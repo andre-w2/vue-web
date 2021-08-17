@@ -8,7 +8,7 @@
         Войти аккаунт
       </h2>
     </div>
-    <div class="mt-8 space-y-6">
+    <form class="mt-8 space-y-6" action="" method="POST" @submit.prevent="entrance">
       <input type="hidden" name="remember" value="true">
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
@@ -22,11 +22,11 @@
       </div>
       <p>{{error}}</p>
       <div>
-      	<Button @click="entrance" class="bg-indigo-600 hover:bg-indigo-700">
+      	<Button class="bg-indigo-600 hover:bg-indigo-700">
           	Войти
       	</Button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 </template>
