@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "^8.9.1",
     "js-md5": "^0.7.3",
     "tailwind-forms": "^1.0.6",
     "vue": "^3.0.0",

@@ -4,27 +4,22 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../components/Header.vue')
+    component: () => import('../views/Header.vue')
   },
   {
     path: '/register',
     name: 'Register',
-    component: () => import('../components/Forms_reg.vue')
+    component: () => import('../views/Forms_reg.vue')
   },
   {
     path: '/entrance',
     name: 'Entrance',
-    component: () => import('../components/Entrance.vue')
-  },
-  {
-    path: '/exit',
-    name: 'Exit',
-    component: () => import('../components/Exit.vue')
+    component: () => import('../views/Entrance.vue')
   },
   {
     path: '/users',
     name: 'Users',
-    component: () => import('../components/User.vue')
+    component: () => import('../views/User.vue')
   }
 ]
 
