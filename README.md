@@ -1,24 +1,38 @@
 # vue-web
 
-## Project setup
+## Установка проекта
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск сервера
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Сборка проекта для продакшена
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### Запуск eslit для проверки проекта
 ```
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Создайте файл api.js , в папке src и вставьте следующий код, замените точки на ваши данные
+```
+const firebaseConfig = {
+	apiKey: "...",
+	authDomain: "...",
+	projectId: "...",
+	storageBucket: "...",
+	messagingSenderId: "...",
+	appId: "...",
+	measurementId: "..."
+};
+
+export default firebaseConfig;
+```
+
+
